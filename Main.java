@@ -35,8 +35,28 @@ public class Main {
         // double cat4Weight = 8;
 
         Cat cat1 = new Cat("Glitch", "Tuxedo", 15, 16, 'M');
+        System.out.println(cat1);
         Cat cat2 = new Cat("Cheddar", "orange", 4, 13.2, 'F');
-  
+       
+        int x = 5;
+        int myArray[] = {1,2,3,4,5};
+        System.out.println("myArray is: " + myArray);
+        Circle circle1 = new Circle();
+        System.out.println("x is: " + x);
+        System.out.println("circle1 is: " + circle1);
+
+        circle1.setRadius(25);
+        System.out.println(circle1.radius);
+        System.out.println(circle1.getArea());
+
+        Circle circle2 = new Circle(12);
+        System.out.println(circle2.radius);
+        System.out.println("----------------------");
+        System.out.println("circle1.radius = " + circle1.radius);
+        System.out.println("circle2.radius = " + circle2.radius);
+        System.out.println("----------------------");
+
+
         cat1.printInfo();
         cat2.printInfo();
 
