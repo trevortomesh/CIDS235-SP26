@@ -1,6 +1,30 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println("test");
+
+        Date date = new Date();
+        System.out.println("The time since Jan 1 1970 is " +
+            date.getTime() + " milliseconds");
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer seed: ");
+        int seed = (int) date.getTime();
+        Random generator1 = new Random(seed);
+        Random generator2 = new Random(7);
+        System.out.print("From generator1: ");
+        for(int i =0; i < 10; i++){
+            System.out.print(generator1.nextInt(1000)+" ");
+        }
+
+        // System.out.print("From generator2: ");
+        // for(int i =0; i < 10; i++){
+        //     System.out.print(generator2.nextInt(1000)+" ");
+        // }
+
+        //System.out.println("test");
 
         // Circle circle1 = new Circle();
         // Circle circle2 = new Circle(8);
@@ -64,17 +88,17 @@ public class Main {
     //    System.out.print(cat1.name + " says: ");
     //    cat1.sayMeow();
 
-        int i = 1;
-        int j = i;
-        i = 5;
-        System.out.println("j is now: " + j);
-        System.out.println(i);
-        Circle c = new Circle();
-        Circle c2 = new Circle(12);
-        c2 = c;
-        c.setRadius(5);
-        System.out.println(c + " radius: " + c.radius);
-        System.out.println(c2 + " radius: " + c2.radius);
+        // int i = 1;
+        // int j = i;
+        // i = 5;
+        // System.out.println("j is now: " + j);
+        // System.out.println(i);
+        // Circle c = new Circle();
+        // Circle c2 = new Circle(12);
+        // c2 = c;
+        // c.setRadius(5);
+        // System.out.println(c + " radius: " + c.radius);
+        // System.out.println(c2 + " radius: " + c2.radius);
 
 
     }
