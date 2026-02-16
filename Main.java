@@ -5,19 +5,25 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args){
 
-        Date date = new Date();
-        System.out.println("The time since Jan 1 1970 is " +
-            date.getTime() + " milliseconds");
+        Circle circle1 = new Circle(5);
+        
+        Circle circle2 = new Circle(2);
+       
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter an integer seed: ");
-        int seed = (int) date.getTime();
-        Random generator1 = new Random(seed);
-        Random generator2 = new Random(7);
-        System.out.print("From generator1: ");
-        for(int i =0; i < 10; i++){
-            System.out.print(generator1.nextInt(1000)+" ");
-        }
+        System.out.println("there are : " + Circle.numberOfObjects + " circles!");
+        // Date date = new Date();
+        // System.out.println("The time since Jan 1 1970 is " +
+        //     date.getTime() + " milliseconds");
+
+        // Scanner input = new Scanner(System.in);
+        // System.out.print("Enter an integer seed: ");
+        // int seed = (int) date.getTime();
+        // Random generator1 = new Random(seed);
+        // Random generator2 = new Random(7);
+        // System.out.print("From generator1: ");
+        // for(int i =0; i < 10; i++){
+        //     System.out.print(generator1.nextInt(1000)+" ");
+        // }
 
         // System.out.print("From generator2: ");
         // for(int i =0; i < 10; i++){
