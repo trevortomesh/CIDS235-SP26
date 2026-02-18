@@ -1,6 +1,6 @@
 public class Circle {
-    double radius = 1;
-    static int numberOfObjects = 0;
+    private double radius = 1;
+    private static int numberOfObjects = 0;
 
     Circle(){   
         numberOfObjects++;
@@ -21,5 +21,27 @@ public class Circle {
 
     void setRadius(double newRadius){
         radius = newRadius;
+    }
+
+    double getRadius(){
+        return radius;
+    }
+
+    void instancePrintStuff(){
+        System.out.println(numberOfObjects); //access static var
+        System.out.println(Circle.getNumberOfObjects());    // access static method
+        System.out.println(getArea());  //access instance method
+        System.out.println(radius); //access instance variable
+    }
+
+    static void staticPrintStuff(){
+        System.out.println(numberOfObjects); //access static var
+        System.out.println(Circle.getNumberOfObjects());    // access static method
+        //System.out.println(getArea());  //access instance method
+       //System.out.println(radius); //access instance variable
+    }
+
+    static int getNumberOfObjects(){
+        return numberOfObjects;
     }
 }

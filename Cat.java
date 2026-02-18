@@ -31,5 +31,10 @@ public class Cat {
         System.out.println("Meow!");
     }
 
+    // void printCircle(Circle c){
+    //     System.out.println(c.radius);
+    //     c.radius = 1000;
+    // }
+
     
 }

@@ -9,8 +9,14 @@ public class Main {
         
         Circle circle2 = new Circle(2);
        
+        System.out.println(circle1.getRadius());
+        circle1.setRadius(1000);
+        //Circle.numberOfObjects = 1000000; 
+        System.out.println(circle1.getRadius());
 
-        System.out.println("there are : " + Circle.numberOfObjects + " circles!");
+        int nobjects = circle1.getNumberOfObjects();
+        System.out.println("there are : " + Circle.getNumberOfObjects() + " circles!");
+        circle2.instancePrintStuff();
         // Date date = new Date();
         // System.out.println("The time since Jan 1 1970 is " +
         //     date.getTime() + " milliseconds");
