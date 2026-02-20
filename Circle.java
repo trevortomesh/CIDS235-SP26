@@ -2,46 +2,51 @@ public class Circle {
     private double radius = 1;
     private static int numberOfObjects = 0;
 
-    Circle(){   
-        numberOfObjects++;
+    public Circle(){   
+        incObjects();
     }
 
-    Circle(double newRadius){
+    public Circle(double newRadius){
         radius = newRadius;
-        numberOfObjects++;
+        incObjects();
     }
 
-    double getArea(){
+    private static int incObjects(){
+        numberOfObjects++;
+        return numberOfObjects;
+    }
+
+    public double getArea(){
         return radius * radius * Math.PI;
     }
 
-    double getPerimeter(){
+    public double getPerimeter(){
         return 2 * radius * Math.PI;
     }
 
-    void setRadius(double newRadius){
-        radius = newRadius;
+    public void setRadius(double newRadius){
+            radius = Math.abs(newRadius);
     }
 
-    double getRadius(){
+    public double getRadius(){
         return radius;
     }
 
-    void instancePrintStuff(){
+    public void instancePrintStuff(){
         System.out.println(numberOfObjects); //access static var
         System.out.println(Circle.getNumberOfObjects());    // access static method
         System.out.println(getArea());  //access instance method
         System.out.println(radius); //access instance variable
     }
 
-    static void staticPrintStuff(){
+    public static void staticPrintStuff(){
         System.out.println(numberOfObjects); //access static var
         System.out.println(Circle.getNumberOfObjects());    // access static method
         //System.out.println(getArea());  //access instance method
        //System.out.println(radius); //access instance variable
     }
 
-    static int getNumberOfObjects(){
+    public static int getNumberOfObjects(){
         return numberOfObjects;
     }
 }

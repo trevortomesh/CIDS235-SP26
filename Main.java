@@ -6,17 +6,24 @@ public class Main {
     public static void main(String[] args){
 
         Circle circle1 = new Circle(5);
-        
+        //Circle.incObjects();
+        System.out.println(Circle.getNumberOfObjects());
         Circle circle2 = new Circle(2);
-       
-        System.out.println(circle1.getRadius());
-        circle1.setRadius(1000);
-        //Circle.numberOfObjects = 1000000; 
-        System.out.println(circle1.getRadius());
+        System.out.println(Circle.getNumberOfObjects());
 
-        int nobjects = circle1.getNumberOfObjects();
-        System.out.println("there are : " + Circle.getNumberOfObjects() + " circles!");
-        circle2.instancePrintStuff();
+        // double myRadiusGuy = circle1.getRadius();
+        // myRadiusGuy = 123123;
+       
+        // System.out.println(circle1.getRadius());
+        // //circle1.radius = 1000; //radius is private, so this line will cause an error
+        // //circle1.setRadius(-300);
+        // System.out.println("circle1 area is " + circle1.getArea());
+        // //Circle.numberOfObjects = 1000000; 
+        // System.out.println(circle1.getRadius());
+
+        // int nobjects = circle1.getNumberOfObjects();
+        // System.out.println("there are : " + Circle.getNumberOfObjects() + " circles!");
+        // circle2.instancePrintStuff();
         // Date date = new Date();
         // System.out.println("The time since Jan 1 1970 is " +
         //     date.getTime() + " milliseconds");
