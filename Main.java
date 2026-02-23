@@ -1,8 +1,40 @@
+/**
+ * ============================================================================
+ * File: Main.java
+ * Author: Trevor Tomesh
+ * Date: February 23, 2026
+ * Course: CIDS235-SP26
+ * ============================================================================
+ * 
+ * Description:
+ * The main entry point for the program. Demonstrates the use of the Circle
+ * and Cat classes by creating instances and displaying their properties.
+ * 
+ * Javadoc comments written by GitHub Copilot
+ * ============================================================================
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Date;
 
+/**
+ * Main class containing the entry point for the program.
+ * Demonstrates object creation and method calls on Circle and Cat classes.
+ */
 public class Main {
+    /**
+     * Constructs a Main instance.
+     */
+    public Main() {
+    }
+
+    /**
+     * The main method - entry point of the program.
+     * Creates Circle objects and demonstrates the static numberOfObjects tracking.
+     * 
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args){
 
         Circle circle1 = new Circle(5);
@@ -10,6 +42,8 @@ public class Main {
         System.out.println(Circle.getNumberOfObjects());
         Circle circle2 = new Circle(2);
         System.out.println(Circle.getNumberOfObjects());
+        System.out.println(circle1.getRadius());
+        printCircle(circle2);
 
         // double myRadiusGuy = circle1.getRadius();
         // myRadiusGuy = 123123;
@@ -120,6 +154,12 @@ public class Main {
         // System.out.println(c2 + " radius: " + c2.radius);
 
 
+    }
+
+    public static void printCircle(Circle c){
+        System.out.println("The area of the circle of radius " + 
+            c.getRadius() + " is " + c.getArea());
+        
     }
 }
 
