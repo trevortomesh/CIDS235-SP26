@@ -23,11 +23,6 @@ import java.util.Date;
  * Demonstrates object creation and method calls on Circle and Cat classes.
  */
 public class Main {
-    /**
-     * Constructs a Main instance.
-     */
-    public Main() {
-    }
 
     /**
      * The main method - entry point of the program.
@@ -37,14 +32,22 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Circle circle1 = new Circle(5);
-        //Circle.incObjects();
-        System.out.println(Circle.getNumberOfObjects());
-        Circle circle2 = new Circle(2);
-        System.out.println(Circle.getNumberOfObjects());
-        System.out.println(circle1.getRadius());
-        printCircle(circle2);
+        Circle myCircle = new Circle(1);
 
+        int n = 5;
+        printAreas(myCircle, n);
+
+        System.out.println("Radius is " + myCircle.getRadius());
+        System.out.println("n is " + n);
+
+        //Circle circle1 = new Circle(5);
+        //Circle.incObjects();
+        // System.out.println(Circle.getNumberOfObjects());
+        // Circle circle2 = new Circle(2);
+        // System.out.println(Circle.getNumberOfObjects());
+        // System.out.println(circle1.getRadius());
+        // printCircle(circle2);
+        // System.out.println(circle2.getRadius());
         // double myRadiusGuy = circle1.getRadius();
         // myRadiusGuy = 123123;
        
@@ -159,8 +162,20 @@ public class Main {
     public static void printCircle(Circle c){
         System.out.println("The area of the circle of radius " + 
             c.getRadius() + " is " + c.getArea());
+        //c.setRadius(100);
+        //System.out.println(c);
         
     }
+
+    public static void printAreas(Circle c, int times){
+        System.out.println("Radius \t\tArea");
+        while(times >= 1){
+            System.out.println(c.getRadius() + "\t\t" + c.getArea());
+            c.setRadius(c.getRadius() + 1);
+            times--;
+        }
+    }
+
 }
 
 
