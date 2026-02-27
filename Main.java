@@ -16,6 +16,9 @@
 
 import java.util.Random;
 import java.util.Scanner;
+
+import javax.security.auth.login.CredentialException;
+
 import java.util.Date;
 
 /**
@@ -32,13 +35,28 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Circle myCircle = new Circle(1);
+        Circle[] circleArray = new Circle[10];
+        //System.out.println(circleArray[3]);
+        for(int i = 0; i < circleArray.length; i++){
+            circleArray[i] = new Circle();
+            System.out.println(circleArray[i]);
+        }
+        System.out.println(circleArray);
 
-        int n = 5;
-        printAreas(myCircle, n);
+        
 
-        System.out.println("Radius is " + myCircle.getRadius());
-        System.out.println("n is " + n);
+        // int[] myArray = new int[10];
+        // System.out.println(myArray[5]);
+        // int[] test = {1,2,3,4,5};
+        // System.out.println(test);
+
+        // Circle myCircle = new Circle(1);
+
+        // int n = 5;
+        // printAreas(myCircle, n);
+
+        // System.out.println("Radius is " + myCircle.getRadius());
+        // System.out.println("n is " + n);
 
         //Circle circle1 = new Circle(5);
         //Circle.incObjects();
