@@ -35,13 +35,12 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Circle[] circleArray = new Circle[10];
-        //System.out.println(circleArray[3]);
-        for(int i = 0; i < circleArray.length; i++){
-            circleArray[i] = new Circle();
-            System.out.println(circleArray[i]);
-        }
-        System.out.println(circleArray);
+        String s = "Hello";
+        s = "How are you?";
+
+        System.out.println(s);
+      //  Circle[] circleArray = createCircleArray(10);
+       // printCircleArray(circleArray);
 
         
 
@@ -177,6 +176,14 @@ public class Main {
 
     }
 
+    public static Circle[] createCircleArray(int len){
+            Circle[] circleArray = new Circle[len];
+            for(int i = 0; i < circleArray.length; i++){
+                circleArray[i] = new Circle(Math.random()*100);
+        }
+        return circleArray;
+    }
+
     public static void printCircle(Circle c){
         System.out.println("The area of the circle of radius " + 
             c.getRadius() + " is " + c.getArea());
@@ -192,6 +199,28 @@ public class Main {
             c.setRadius(c.getRadius() + 1);
             times--;
         }
+    }
+
+    public static void printCircleArray(Circle[] circleArray){
+        System.out.printf("%-30s%-15s\n", "Radius", "Area");
+
+        for(int i = 0; i < circleArray.length; i++){
+            System.out.printf("%-30s%-15f\n", circleArray[i].getRadius(),
+            circleArray[i].getArea());
+        }
+
+        System.out.println("-------------------------");
+        System.out.println("The total area of the circles is " + sum(circleArray));
+        
+    }
+
+    public static double sum(Circle[] circleArray){
+        double sum = 0;
+
+        for(int i = 0; i < circleArray.length; i++){
+            sum += circleArray[i].getArea();
+        }
+        return sum;
     }
 
 }
