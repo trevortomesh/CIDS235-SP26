@@ -35,10 +35,75 @@ public class Main {
      */
     public static void main(String[] args){
 
-        String s = "Hello";
-        s = "How are you?";
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < 10000; i++){
+            sb.append(i);
+        }
 
-        System.out.println(s);
+        String s = sb.toString();
+
+        int score = 100;
+        int max = 100;
+        String msg = "Score: " + score + " / " + max;
+        System.out.println(msg);
+
+        // String myString = "hi";
+        // myString += " Bob!";
+
+        // System.out.println(myString);
+
+        // String s = "";
+
+        // for(int i = 0; i < 10000; i++){
+        //     s = s + i;
+        // }
+        // System.out.println(s);
+
+        // int a = 5;
+        // int b = 5;
+
+        // System.out.println(a == b);
+
+        //  String x = "yo!";
+        //  String y = "yo!";
+        //  String z = new String("yo!");
+
+        // System.out.println(x == y);
+        // System.out.println(x == z);
+        // System.out.println(x.equals(y));
+        // System.out.println(x.equals(z));
+
+
+
+        // String a = new String("hi!");
+        // String b = new String("hi!");
+
+        // System.out.println(a == b);
+        // System.out.println(a.equals(b));
+
+
+        // String x = "a";
+        // String y = x;
+        // x = x + "b";
+
+        // System.out.println(x);
+        // System.out.println(y);
+
+        // String a = "hello";
+        // String b = "hello";
+
+        // System.out.println(a == b);
+
+        // String s = "Hello";
+        // s = "How are you?";
+
+        // System.out.println(s);
+
+        // Immutable myImmutable = new Immutable(10);
+
+        // System.out.println(myImmutable.getVar());
+        //myImmutable.myVar = 7;
+
       //  Circle[] circleArray = createCircleArray(10);
        // printCircleArray(circleArray);
 
