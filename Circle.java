@@ -22,7 +22,7 @@
  */
 public class Circle {
     /** The radius of the circle, default value is 1. */
-    private double radius = 1;
+    private double radius;
     /** Static counter for the total number of Circle objects created. */
     private static int numberOfObjects = 0;
 
@@ -31,17 +31,17 @@ public class Circle {
      * Increments the number of Circle objects created.
      */
     public Circle(){   
-        incObjects();
+        this(1.0);
     }
 
     /**
      * Constructs a Circle with a specified radius.
      * Increments the number of Circle objects created.
      * 
-     * @param newRadius the radius of the circle
+     * @param radius the radius of the circle
      */
-    public Circle(double newRadius){
-        radius = newRadius;
+    public Circle(double radius){
+        this.radius = radius;
         incObjects();
     }
 
@@ -62,7 +62,7 @@ public class Circle {
      * @return the area of the circle
      */
     public double getArea(){
-        return radius * radius * Math.PI;
+        return this.radius * this.radius * Math.PI;
     }
 
     /**
@@ -72,16 +72,16 @@ public class Circle {
      * @return the perimeter of the circle
      */
     public double getPerimeter(){
-        return 2 * radius * Math.PI;
+        return 2 * this.radius * Math.PI;
     }
 
     /**
      * Sets the radius of the circle to the absolute value of the given parameter.
      * 
-     * @param newRadius the new radius value
+     * @param radius the new radius value
      */
-    public void setRadius(double newRadius){
-            radius = Math.abs(newRadius);
+    public void setRadius(double radius){
+            this.radius = Math.abs(radius);
     }
 
     /**
@@ -90,7 +90,7 @@ public class Circle {
      * @return the radius of the circle
      */
     public double getRadius(){
-        return radius;
+        return this.radius;
     }
 
     /**
@@ -101,8 +101,9 @@ public class Circle {
     public void instancePrintStuff(){
         System.out.println(numberOfObjects); //access static var
         System.out.println(Circle.getNumberOfObjects());    // access static method
+        //System.out.println(this.numberOfObjects);
         System.out.println(getArea());  //access instance method
-        System.out.println(radius); //access instance variable
+        System.out.println(this.radius); //access instance variable
     }
 
     /**
@@ -115,6 +116,7 @@ public class Circle {
         System.out.println(Circle.getNumberOfObjects());    // access static method
         //System.out.println(getArea());  //access instance method
        //System.out.println(radius); //access instance variable
+       //System.out.println(this.radius);
     }
 
     /**

@@ -35,17 +35,20 @@ public class Main {
      */
     public static void main(String[] args){
 
-        StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < 10000; i++){
-            sb.append(i);
-        }
+        // Thistest test = new Thistest();
+        // test.test();
 
-        String s = sb.toString();
+        // StringBuilder sb = new StringBuilder();
+        // for(int i = 0; i < 10000; i++){
+        //     sb.append(i);
+        // }
 
-        int score = 100;
-        int max = 100;
-        String msg = "Score: " + score + " / " + max;
-        System.out.println(msg);
+        // String s = sb.toString();
+
+        // int score = 100;
+        // int max = 100;
+        // String msg = "Score: " + score + " / " + max;
+        // System.out.println(msg);
 
         // String myString = "hi";
         // myString += " Bob!";
