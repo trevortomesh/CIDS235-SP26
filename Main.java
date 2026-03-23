@@ -14,12 +14,18 @@
  * ============================================================================
  */
 
-import java.util.Random;
-import java.util.Scanner;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
-import javax.security.auth.login.CredentialException;
-
-import java.util.Date;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Main class containing the entry point for the program.
@@ -34,7 +40,7 @@ public class Main {
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args){
-
+        SwingUtilities.invokeLater(Main::createAndShowGui);
         // Thistest test = new Thistest();
         // test.test();
 
@@ -244,6 +250,140 @@ public class Main {
 
     }
 
+    private static void createAndShowGui() {
+        JFrame frame = new JFrame("Loan Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        java.awt.Font labelFont = new java.awt.Font("SansSerif", java.awt.Font.BOLD, 14);
+        java.awt.Font fieldFont = new java.awt.Font("SansSerif", java.awt.Font.PLAIN, 14);
+        java.awt.Font headerFont = new java.awt.Font("SansSerif", java.awt.Font.BOLD, 18);
+
+        java.text.NumberFormat currencyFormat = java.text.NumberFormat.getCurrencyInstance();
+
+        JTextField interestField = new JTextField(10);
+        JTextField yearsField = new JTextField(10);
+        JTextField amountField = new JTextField(10);
+        JTextField monthlyField = new JTextField(10);
+        JTextField totalField = new JTextField(10);
+
+        monthlyField.setEditable(false);
+        monthlyField.setFocusable(false);
+        totalField.setEditable(false);
+        totalField.setFocusable(false);
+
+        JPanel inputPanel = new JPanel(new GridLayout(5, 2, 8, 8));
+        inputPanel.setBorder(new EmptyBorder(12, 12, 12, 12));
+        inputPanel.setBackground(new java.awt.Color(245, 248, 255));
+
+        JLabel headerLabel = new JLabel("Loan Payment Calculator", JLabel.CENTER);
+        headerLabel.setFont(headerFont);
+        headerLabel.setBorder(new EmptyBorder(12, 12, 4, 12));
+
+        JLabel interestLabel = new JLabel("Annual Interest Rate (%)");
+        JLabel yearsLabel = new JLabel("Number of Years");
+        JLabel amountLabel = new JLabel("Loan Amount");
+        JLabel monthlyLabel = new JLabel("Monthly Payment");
+        JLabel totalLabel = new JLabel("Total Payment");
+
+        interestLabel.setFont(labelFont);
+        yearsLabel.setFont(labelFont);
+        amountLabel.setFont(labelFont);
+        monthlyLabel.setFont(labelFont);
+        totalLabel.setFont(labelFont);
+
+        interestField.setFont(fieldFont);
+        yearsField.setFont(fieldFont);
+        amountField.setFont(fieldFont);
+        monthlyField.setFont(fieldFont);
+        totalField.setFont(fieldFont);
+
+        java.awt.Color fieldBackground = new java.awt.Color(255, 255, 255);
+        java.awt.Color outputBackground = new java.awt.Color(230, 240, 255);
+        interestField.setBackground(fieldBackground);
+        yearsField.setBackground(fieldBackground);
+        amountField.setBackground(fieldBackground);
+        monthlyField.setBackground(outputBackground);
+        totalField.setBackground(outputBackground);
+
+        interestField.setHorizontalAlignment(JTextField.RIGHT);
+        yearsField.setHorizontalAlignment(JTextField.RIGHT);
+        amountField.setHorizontalAlignment(JTextField.RIGHT);
+        monthlyField.setHorizontalAlignment(JTextField.RIGHT);
+        totalField.setHorizontalAlignment(JTextField.RIGHT);
+
+        interestField.setToolTipText("Example: 6.5");
+        yearsField.setToolTipText("Whole number of years");
+        amountField.setToolTipText("Example: 250000");
+
+        inputPanel.add(interestLabel);
+        inputPanel.add(interestField);
+        inputPanel.add(yearsLabel);
+        inputPanel.add(yearsField);
+        inputPanel.add(amountLabel);
+        inputPanel.add(amountField);
+        inputPanel.add(monthlyLabel);
+        inputPanel.add(monthlyField);
+        inputPanel.add(totalLabel);
+        inputPanel.add(totalField);
+
+        JButton calculateButton = new JButton("Calculate");
+        calculateButton.addActionListener(event -> {
+            try {
+                double annualInterestRate = Double.parseDouble(interestField.getText().trim());
+                int numberOfYears = Integer.parseInt(yearsField.getText().trim());
+                double loanAmount = Double.parseDouble(amountField.getText().trim());
+
+                if (annualInterestRate <= 0 || numberOfYears <= 0 || loanAmount <= 0) {
+                    JOptionPane.showMessageDialog(frame,
+                        "Please enter values greater than zero.",
+                        "Invalid Input",
+                        JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                Loan loan = new Loan(annualInterestRate, numberOfYears, loanAmount);
+                monthlyField.setText(currencyFormat.format(loan.getMonthlyPayment()));
+                totalField.setText(currencyFormat.format(loan.getTotalPayment()));
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(frame,
+                    "Please enter valid numeric values.",
+                    "Invalid Input",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        });
+
+        JButton clearButton = new JButton("Clear");
+        clearButton.addActionListener(event -> {
+            interestField.setText("");
+            yearsField.setText("");
+            amountField.setText("");
+            monthlyField.setText("");
+            totalField.setText("");
+            interestField.requestFocusInWindow();
+        });
+
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.setBackground(new java.awt.Color(245, 248, 255));
+        calculateButton.setFont(labelFont);
+        clearButton.setFont(labelFont);
+        calculateButton.setBackground(new java.awt.Color(255, 214, 153));
+        clearButton.setBackground(new java.awt.Color(220, 220, 220));
+        buttonPanel.add(clearButton);
+        buttonPanel.add(calculateButton);
+
+        frame.getContentPane().setLayout(new BorderLayout(10, 10));
+        frame.getContentPane().setBackground(new java.awt.Color(245, 248, 255));
+        frame.getContentPane().add(headerLabel, BorderLayout.NORTH);
+        frame.getContentPane().add(inputPanel, BorderLayout.CENTER);
+        frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+
+        frame.getRootPane().setDefaultButton(calculateButton);
+
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
     public static Circle[] createCircleArray(int len){
             Circle[] circleArray = new Circle[len];
             for(int i = 0; i < circleArray.length; i++){
@@ -292,5 +432,3 @@ public class Main {
     }
 
 }
-
-
