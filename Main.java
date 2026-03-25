@@ -40,7 +40,12 @@ public class Main {
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args){
-        SwingUtilities.invokeLater(Main::createAndShowGui);
+
+        Student newStudent = new Student();
+        Name newName = new Name();
+        newStudent.setName("John", "Cena");
+
+        //SwingUtilities.invokeLater(Main::createAndShowGui);
         // Thistest test = new Thistest();
         // test.test();
 
