@@ -45,6 +45,25 @@ public class Main {
         Name newName = new Name();
         newStudent.setName("John", "Cena");
 
+        Course course1 = new Course("Programming Paradigms");
+
+        course1.addStudent(newStudent.getName());
+        course1.addStudent("Bob theBuilder");
+
+        System.out.println("Number of Students in course1: "
+            + course1.getNumberOfStudents()
+        );
+
+        String[] students = course1.getStudents();
+
+        for(int i = 0; i < course1.getNumberOfStudents(); i++){
+            System.out.print(students[i] + ", ");
+        }
+        System.out.println();
+        
+
+
+
         //SwingUtilities.invokeLater(Main::createAndShowGui);
         // Thistest test = new Thistest();
         // test.test();
