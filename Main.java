@@ -41,25 +41,36 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Student newStudent = new Student();
-        Name newName = new Name();
-        newStudent.setName("John", "Cena");
-
-        Course course1 = new Course("Programming Paradigms");
-
-        course1.addStudent(newStudent.getName());
-        course1.addStudent("Bob theBuilder");
-
-        System.out.println("Number of Students in course1: "
-            + course1.getNumberOfStudents()
-        );
-
-        String[] students = course1.getStudents();
-
-        for(int i = 0; i < course1.getNumberOfStudents(); i++){
-            System.out.print(students[i] + ", ");
+        StackOfIntegers stack = new StackOfIntegers();
+        for(int i = 0; i < 10; i++){
+            stack.push(i);
         }
-        System.out.println();
+
+        while(!stack.isEmpty()){
+            System.out.print(stack.pop() + " ");
+        }
+
+        System.out.println(stack.pop());
+
+        // Student newStudent = new Student();
+        // Name newName = new Name();
+        // newStudent.setName("John", "Cena");
+
+        // Course course1 = new Course("Programming Paradigms");
+
+        // course1.addStudent(newStudent.getName());
+        // course1.addStudent("Bob theBuilder");
+
+        // System.out.println("Number of Students in course1: "
+        //     + course1.getNumberOfStudents()
+        // );
+
+        // String[] students = course1.getStudents();
+
+        // for(int i = 0; i < course1.getNumberOfStudents(); i++){
+        //     System.out.print(students[i] + ", ");
+        // }
+        // System.out.println();
         
 
 
