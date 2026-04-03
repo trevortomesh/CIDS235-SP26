@@ -26,6 +26,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Main class containing the entry point for the program.
@@ -41,16 +43,67 @@ public class Main {
      */
     public static void main(String[] args){
 
-        StackOfIntegers stack = new StackOfIntegers();
-        for(int i = 0; i < 10; i++){
-            stack.push(i);
-        }
 
-        while(!stack.isEmpty()){
-            System.out.print(stack.pop() + " ");
-        }
+       //int x = 5;
+       //Integer x2 = new Integer("6");
+        Integer x1 = 5;
+        System.out.println(x1);
+        Integer[] array = {3,5,35,12,22,19,76,8,6};
+        ArrayList<Integer> listOfInts = new ArrayList<>(Arrays.asList(array));
+        ArrayList<String> cityList = new ArrayList<>();
+        java.util.Collections.sort(listOfInts);
+        System.out.println(listOfInts);
 
-        System.out.println(stack.pop());
+        cityList.add("Cameron");
+        cityList.add("Clarksville");
+        cityList.add("Grantsburg");
+        cityList.add("Hudson");
+        cityList.add("Hyderabad");
+        cityList.add("Scandia");
+        cityList.add("Hudson");
+        cityList.add("Hudson");
+        System.out.println(cityList);        
+
+
+
+        // Astragali dice = new Astragali();
+
+        // int count1 = 0;
+        // int count3 = 0;
+        // int count4 = 0;
+        // int count6 = 0;
+        // for(int i = 0; i < 100; i++){
+        //     int roll = dice.roll();
+        //  //System.out.println();
+        //  if(roll == 1){
+        //     count1++;
+        //  }
+        //  else if(roll == 3){
+        //     count3++;
+        //  }
+        //  else if(roll == 4){
+        //     count4++;
+        //  }
+        //  else{count6++;}
+        // }
+
+        // System.out.println("count1: " + count1);
+        // System.out.println("count3: " + count3);
+        // System.out.println("count4: " + count4);
+        // System.out.println("count6: " + count6);
+
+
+
+        // StackOfIntegers stack = new StackOfIntegers();
+        // for(int i = 0; i < 10; i++){
+        //     stack.push(i);
+        // }
+
+        // while(!stack.isEmpty()){
+        //     System.out.print(stack.pop() + " ");
+        // }
+
+        // System.out.println(stack.pop());
 
         // Student newStudent = new Student();
         // Name newName = new Name();
