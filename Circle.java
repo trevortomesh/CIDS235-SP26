@@ -20,7 +20,7 @@
  * This class tracks the number of Circle objects created and provides
  * methods to calculate area, perimeter, and manage the radius.
  */
-public class Circle {
+public class Circle extends GeometricObject {
     /** The radius of the circle, default value is 1. */
     private double radius;
     /** Static counter for the total number of Circle objects created. */

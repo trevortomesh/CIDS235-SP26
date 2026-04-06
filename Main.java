@@ -44,25 +44,31 @@ public class Main {
     public static void main(String[] args){
 
 
+        Circle myCircle = new Circle();
+        Rectangle myRectangle = new Rectangle();
+
+        System.out.println(myCircle.isFilled());
+        System.out.println(myRectangle.isFilled());
+
        //int x = 5;
        //Integer x2 = new Integer("6");
-        Integer x1 = 5;
-        System.out.println(x1);
-        Integer[] array = {3,5,35,12,22,19,76,8,6};
-        ArrayList<Integer> listOfInts = new ArrayList<>(Arrays.asList(array));
-        ArrayList<String> cityList = new ArrayList<>();
-        java.util.Collections.sort(listOfInts);
-        System.out.println(listOfInts);
+        // Integer x1 = 5;
+        // System.out.println(x1);
+        // Integer[] array = {3,5,35,12,22,19,76,8,6};
+        // ArrayList<Integer> listOfInts = new ArrayList<>(Arrays.asList(array));
+        // ArrayList<String> cityList = new ArrayList<>();
+        // java.util.Collections.sort(listOfInts);
+        // System.out.println(listOfInts);
 
-        cityList.add("Cameron");
-        cityList.add("Clarksville");
-        cityList.add("Grantsburg");
-        cityList.add("Hudson");
-        cityList.add("Hyderabad");
-        cityList.add("Scandia");
-        cityList.add("Hudson");
-        cityList.add("Hudson");
-        System.out.println(cityList);        
+        // cityList.add("Cameron");
+        // cityList.add("Clarksville");
+        // cityList.add("Grantsburg");
+        // cityList.add("Hudson");
+        // cityList.add("Hyderabad");
+        // cityList.add("Scandia");
+        // cityList.add("Hudson");
+        // cityList.add("Hudson");
+        // System.out.println(cityList);        
 
 
 
