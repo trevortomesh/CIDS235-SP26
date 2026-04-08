@@ -45,6 +45,13 @@ public class Circle extends GeometricObject {
         incObjects();
     }
 
+    public Circle(double radius, String color, boolean filled){
+        super(color, filled);
+        this.radius = radius;
+        // setColor(color);
+        // setFilled(filled);
+    }
+
     /**
      * Increments the static count of Circle objects.
      * 
@@ -104,6 +111,7 @@ public class Circle extends GeometricObject {
         //System.out.println(this.numberOfObjects);
         System.out.println(getArea());  //access instance method
         System.out.println(this.radius); //access instance variable
+        super.getDateCreated();
     }
 
     /**

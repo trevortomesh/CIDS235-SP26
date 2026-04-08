@@ -43,12 +43,15 @@ public class Main {
      */
     public static void main(String[] args){
 
+        Faculty faculty = new Faculty();
 
         Circle myCircle = new Circle();
         Rectangle myRectangle = new Rectangle();
 
         System.out.println(myCircle.isFilled());
         System.out.println(myRectangle.isFilled());
+        System.out.println(myCircle);
+        System.out.println(myRectangle.toString());
 
        //int x = 5;
        //Integer x2 = new Integer("6");

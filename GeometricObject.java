@@ -1,4 +1,4 @@
-public class GeometricObject {
+public class GeometricObject{
     private String color = "white";
     private boolean filled;
     private java.util.Date dateCreated;
@@ -31,6 +31,11 @@ public class GeometricObject {
 
     public java.util.Date getDateCreated(){
         return dateCreated;
+    }
+
+    public String toString(){
+        return super.toString() + " created on " + dateCreated + "\ncolor: " + color + 
+        " and filled: " + filled;
     }
 
 }
