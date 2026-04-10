@@ -43,5 +43,8 @@ public class Rectangle extends GeometricObject{
         return 2*(width+height);
     }
 
+    // public String toString(){
+    //     return "A rectangle was created";
+    // }
 
 }

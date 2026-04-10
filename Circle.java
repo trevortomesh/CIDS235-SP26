@@ -135,4 +135,8 @@ public class Circle extends GeometricObject {
     public static int getNumberOfObjects(){
         return numberOfObjects;
     }
+
+    public String toString(){
+        return super.toString() + "\nradius is " + radius;
+    }
 }

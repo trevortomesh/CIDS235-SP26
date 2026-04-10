@@ -43,15 +43,19 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Faculty faculty = new Faculty();
+       // Faculty faculty = new Faculty();
 
         Circle myCircle = new Circle();
         Rectangle myRectangle = new Rectangle();
 
-        System.out.println(myCircle.isFilled());
-        System.out.println(myRectangle.isFilled());
-        System.out.println(myCircle);
-        System.out.println(myRectangle.toString());
+        displayObject(myRectangle);
+        displayObject(myCircle);
+
+        // System.out.println(myCircle.isFilled());
+        // System.out.println(myRectangle.isFilled());
+         //System.out.println(myCircle);
+         //System.out.println(myRectangle.toString());
+        // System.out.println(myRectangle.toString());
 
        //int x = 5;
        //Integer x2 = new Integer("6");
@@ -526,6 +530,12 @@ public class Main {
             sum += circleArray[i].getArea();
         }
         return sum;
+    }
+
+    public static void displayObject(GeometricObject object){
+        System.out.println("Created on " + object.getDateCreated() + 
+                            ". Color is " + object.getColor());
+        //System.out.println(object.getArea());
     }
 
 }
