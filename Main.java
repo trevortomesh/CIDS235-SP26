@@ -48,8 +48,17 @@ public class Main {
         Circle myCircle = new Circle();
         Rectangle myRectangle = new Rectangle();
 
-        displayObject(myRectangle);
-        displayObject(myCircle);
+        //displayObject(myRectangle);
+        //displayObject(myCircle);
+
+        m(new GraduateStudent());
+        m(new Student());
+        m(new Person());
+        m(new Object());
+
+
+
+
 
         // System.out.println(myCircle.isFilled());
         // System.out.println(myRectangle.isFilled());
@@ -349,6 +358,10 @@ public class Main {
         // System.out.println(c2 + " radius: " + c2.radius);
 
 
+    }
+
+    public static void m(Object x){
+        System.out.println(x.toString());
     }
 
     private static void createAndShowGui() {

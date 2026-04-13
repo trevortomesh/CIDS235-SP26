@@ -1,4 +1,4 @@
-public class Student {
+public class Student extends Person {
     private Course[] courseList;
     private Name name = new Name();
     private Address[] addressList;
@@ -15,6 +15,11 @@ public class Student {
     public String getName(){
         //String fullName = first + " " + last; 
         return name.first + " " + name.last;
+    }
+
+    @Override
+    public String toString(){
+        return "Student";
     }
 
 }
