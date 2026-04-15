@@ -45,16 +45,26 @@ public class Main {
 
        // Faculty faculty = new Faculty();
 
-        Circle myCircle = new Circle();
-        Rectangle myRectangle = new Rectangle();
+        // Circle myCircle = new Circle();
+        // Rectangle myRectangle = new Rectangle();
 
         //displayObject(myRectangle);
         //displayObject(myCircle);
 
-        m(new GraduateStudent());
-        m(new Student());
-        m(new Person());
-        m(new Object());
+        // m(new GraduateStudent());
+        // m(new Student());
+        // m(new Person());
+        // m(new Object());
+
+        // GeometricObject o = new Circle();
+        // System.out.println(((Circle)o).getArea());
+        
+        Object c = new Circle();
+        Rectangle c2 = (Rectangle) c;
+
+
+        Object s = new Student();
+        Student s2 = (Student) s;
 
 
 
