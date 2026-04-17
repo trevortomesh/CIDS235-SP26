@@ -43,6 +43,27 @@ public class Main {
      */
     public static void main(String[] args){
 
+       int[] x = {1,2,3};
+       int[] y = {1,2,3};
+       System.out.println(x);
+       System.out.println(y);
+       System.out.println(x.equals(y));
+
+        System.out.println(x == y);
+        // Object object1 = new Circle(1);
+        // Object object4 = new Circle(1);
+        // Object object2 = new Rectangle(1,1);
+        // Object object3 = new Cat();
+        // Object object5 = object3;
+
+
+        // System.out.println(object5.equals(object1));
+        // System.out.println(object1.equals(object4));
+
+
+        // displayObject(object1);
+        // displayObject(object2);
+        // displayObject(object3);
        // Faculty faculty = new Faculty();
 
         // Circle myCircle = new Circle();
@@ -59,12 +80,12 @@ public class Main {
         // GeometricObject o = new Circle();
         // System.out.println(((Circle)o).getArea());
         
-        Object c = new Circle();
-        Rectangle c2 = (Rectangle) c;
+        // Object c = new Circle();
+        // Rectangle c2 = (Rectangle) c;
 
 
-        Object s = new Student();
-        Student s2 = (Student) s;
+        // Object s = new Student();
+        // Student s2 = (Student) s;
 
 
 
@@ -555,10 +576,24 @@ public class Main {
         return sum;
     }
 
-    public static void displayObject(GeometricObject object){
-        System.out.println("Created on " + object.getDateCreated() + 
-                            ". Color is " + object.getColor());
+    public static void displayObject(Object object){
+        if(object instanceof GeometricObject){
+            System.out.println("Your geometric object was created on: " + ((GeometricObject)object).getDateCreated());
+        }
+        if(object instanceof Circle){
+            System.out.println("The circle area is " + ((Circle)object).getArea());
+            System.out.println("The circle's diameter is: " + ((Circle)object).getRadius()*2);
+        }else if(object instanceof Rectangle){
+            System.out.println("The rectangle's area is " + ((Rectangle)object).getArea());
+        }else{System.out.println(object.toString());}
+        // System.out.println("Created on " + object.getDateCreated() + 
+        //                     ". Color is " + object.getColor());
         //System.out.println(object.getArea());
     }
+
+    // public boolean equals(Object obj){
+    //     return this == obj;
+    // }
+
 
 }
