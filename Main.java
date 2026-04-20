@@ -43,13 +43,58 @@ public class Main {
      */
     public static void main(String[] args){
 
-       int[] x = {1,2,3};
-       int[] y = {1,2,3};
-       System.out.println(x);
-       System.out.println(y);
-       System.out.println(x.equals(y));
+        Stack cornicopia = new Stack();
+        Cat myCat = new Cat();
+        Circle myCircle = new Circle();
+        Rectangle myRectangle = new Rectangle();
 
-        System.out.println(x == y);
+        cornicopia.push(myCat);
+        cornicopia.push(myCircle);
+        cornicopia.push(myRectangle);
+        cornicopia.push(cornicopia);
+
+        System.out.println(cornicopia);
+
+        
+
+
+        //  int age = 45;
+        //  byte newAge = (byte)age;
+        // newAge = 12;
+
+        // System.out.println(age);
+
+        // Object o = new Circle();
+        // Circle c = (Circle)o;
+        // System.out.println(o);
+        // System.out.println(c);
+
+        // ArrayList<String> pokemon = new ArrayList<>();
+        // pokemon.add("Pikachu");
+        // pokemon.add("Vulpix");
+        // pokemon.add("Mewtwo");
+        // System.out.println(pokemon);
+        // System.out.println(pokemon.contains("Raichu"));
+        // System.out.println(pokemon.contains("Mewtwo"));
+
+        
+
+
+    //    int[] x = {1,2,3};
+    //    int[] y = {1,2,3};
+    //    System.out.println(x);
+    //    System.out.println(y);
+    //    System.out.println(x.equals(y));
+
+    //     System.out.println(x == y);
+
+    //     Circle circle1 = new Circle(1);
+    //     //displayObject(circle1);
+    //     Object c1 = circle1;
+    //     GeometricObject g1 = circle1;
+    //     GeometricObject g2 = new GeometricObject();
+    //     displayObject(g2);
+
         // Object object1 = new Circle(1);
         // Object object4 = new Circle(1);
         // Object object2 = new Rectangle(1,1);
@@ -580,6 +625,7 @@ public class Main {
         if(object instanceof GeometricObject){
             System.out.println("Your geometric object was created on: " + ((GeometricObject)object).getDateCreated());
         }
+
         if(object instanceof Circle){
             System.out.println("The circle area is " + ((Circle)object).getArea());
             System.out.println("The circle's diameter is: " + ((Circle)object).getRadius()*2);
