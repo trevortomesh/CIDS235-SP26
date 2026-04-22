@@ -23,6 +23,7 @@
 public class Circle extends GeometricObject {
     /** The radius of the circle, default value is 1. */
     private double radius;
+    int lazy;
     /** Static counter for the total number of Circle objects created. */
     private static int numberOfObjects = 0;
 
@@ -50,6 +51,10 @@ public class Circle extends GeometricObject {
         this.radius = radius;
         // setColor(color);
         // setFilled(filled);
+    }
+
+    public void setBlue(){
+        this.color = "Blue";
     }
 
     /**

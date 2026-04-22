@@ -43,17 +43,41 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Stack cornicopia = new Stack();
-        Cat myCat = new Cat();
-        Circle myCircle = new Circle();
-        Rectangle myRectangle = new Rectangle();
+        
 
-        cornicopia.push(myCat);
-        cornicopia.push(myCircle);
-        cornicopia.push(myRectangle);
-        cornicopia.push(cornicopia);
+        Circle c = new Circle();
+        GeometricObject g = new GeometricObject();
+        c.setBlue();
 
-        System.out.println(cornicopia);
+        // Integer[] myNumbers = {11,2,53,41,5};
+        // ArrayList<Integer> list = new ArrayList<>(Arrays.asList(myNumbers));
+        // java.util.Collections.sort(list);
+        // System.out.println(list);
+
+        // Integer[] array = {3,5,95,4,15,34,3,6,5};
+        // ArrayList<Integer> list = new ArrayList<>(Arrays.asList(array));
+        // System.out.println(java.util.Collections.max(list));
+        // System.out.println(java.util.Collections.min(list));
+
+
+        // ArrayList<Object> numbers = new ArrayList<>();
+        // numbers.add(5);
+        // numbers.add(1.2);
+        // numbers.add(0.7);
+        // System.out.println(numbers);
+        // System.out.println(numbers.get(0) + numbers.get(1) );
+
+        // Stack cornucopia = new Stack();
+        // Cat myCat = new Cat();
+        // Circle myCircle = new Circle();
+        // Rectangle myRectangle = new Rectangle();
+
+        // cornucopia.push(myCat);
+        // cornucopia.push(myCircle);
+        // cornucopia.push(myRectangle);
+        // //cornucopia.push(cornucopia);
+
+        // System.out.println(cornucopia);
 
         
 
