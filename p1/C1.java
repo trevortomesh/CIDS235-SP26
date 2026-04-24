@@ -3,8 +3,9 @@ package p1;
 public class C1{
 
     public int x;
-    int y;
-    private int z;
+    protected int y;
+    int z;
+    private int u;
 
     public void m1(){
 
