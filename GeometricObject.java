@@ -1,4 +1,4 @@
-public class GeometricObject{
+public abstract class GeometricObject{
     protected String color = "white";
     private boolean filled;
     private java.util.Date dateCreated;
@@ -33,9 +33,14 @@ public class GeometricObject{
         return dateCreated;
     }
 
+    @Override
     public String toString(){
         return super.toString() + " created on " + dateCreated + "\ncolor: " + color + 
         " and filled: " + filled;
     }
+
+    public abstract double getArea();
+
+    public abstract double getPerimeter();
 
 }

@@ -73,6 +73,7 @@ public class Circle extends GeometricObject {
      * 
      * @return the area of the circle
      */
+    @Override
     public double getArea(){
         return this.radius * this.radius * Math.PI;
     }
@@ -83,6 +84,7 @@ public class Circle extends GeometricObject {
      * 
      * @return the perimeter of the circle
      */
+    @Override
     public double getPerimeter(){
         return 2 * this.radius * Math.PI;
     }
