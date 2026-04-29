@@ -17,6 +17,8 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -43,12 +45,21 @@ public class Main {
      */
     public static void main(String[] args){
 
-        GeometricObject geoObject1 = new Circle(5);
-        GeometricObject geoObject2 = new Rectangle(5,3);
+        ArrayList<Number> list = new ArrayList<>();
+        list.add(45);
+        list.add(3445.53);
+        list.add(new BigInteger("3432323234344343101"));
+        list.add(new BigDecimal("2.090909098909134343444334343"));
 
-        System.out.println(equalArea(geoObject1, geoObject2));
-        displayGeometricObject(geoObject2);
-        displayGeometricObject(geoObject1);  
+        System.out.println("the largest number is " + getLargestNumber(list));
+        list.get(0).doubleValue();
+        Integer myInt = 25;
+        // GeometricObject geoObject1 = new Circle(5);
+        // GeometricObject geoObject2 = new Rectangle(5,3);
+
+        // System.out.println(equalArea(geoObject1, geoObject2));
+        // displayGeometricObject(geoObject2);
+        // displayGeometricObject(geoObject1);  
 
         //System.out.println(c.getArea());
         //GeometricObject g = new GeometricObject();
@@ -689,6 +700,22 @@ public class Main {
         System.out.println("The perimeter is " + object.getPerimeter());
         //displayObject(object);
     }
+
+    public static Number getLargestNumber(ArrayList<Number> list){
+        if(list == null || list.size() == 0){
+            return null;
+        }
+
+        Number number = list.get(0);
+        for(int i = 1; i < list.size(); i++){
+            if(number.doubleValue() < list.get(i).doubleValue()){
+                number = list.get(i);
+            }
+        }
+        return number;
+    }
+
+
 
 
 }
