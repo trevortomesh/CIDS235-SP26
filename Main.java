@@ -45,15 +45,27 @@ public class Main {
      */
     public static void main(String[] args){
 
-        ArrayList<Number> list = new ArrayList<>();
-        list.add(45);
-        list.add(3445.53);
-        list.add(new BigInteger("3432323234344343101"));
-        list.add(new BigDecimal("2.090909098909134343444334343"));
+        Object[] objects = {new Tiger(), new Chicken(), new Apple()};
 
-        System.out.println("the largest number is " + getLargestNumber(list));
-        list.get(0).doubleValue();
-        Integer myInt = 25;
+        for(int i = 0; i < objects.length; i++){
+            if(objects[i] instanceof Edible){
+                System.out.println(((Edible)objects[i]).howToEat());
+            }
+
+            if(objects[i] instanceof Animal){
+                System.out.println(((Animal)objects[i]).sound());
+            }
+        }
+
+        // ArrayList<Number> list = new ArrayList<>();
+        // list.add(45);
+        // list.add(3445.53);
+        // list.add(new BigInteger("3432323234344343101"));
+        // list.add(new BigDecimal("2.090909098909134343444334343"));
+
+        // System.out.println("the largest number is " + getLargestNumber(list));
+        // list.get(0).doubleValue();
+        // Integer myInt = 25;
         // GeometricObject geoObject1 = new Circle(5);
         // GeometricObject geoObject2 = new Rectangle(5,3);
 
