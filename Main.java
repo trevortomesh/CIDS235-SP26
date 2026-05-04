@@ -45,17 +45,48 @@ public class Main {
      */
     public static void main(String[] args){
 
-        Object[] objects = {new Tiger(), new Chicken(), new Apple()};
+        Box<Integer> intBox = new Box<>();
+        intBox.set(10);
 
-        for(int i = 0; i < objects.length; i++){
-            if(objects[i] instanceof Edible){
-                System.out.println(((Edible)objects[i]).howToEat());
-            }
+        Box<String> strBox = new Box<>();
+        strBox.set("Hello!");
 
-            if(objects[i] instanceof Animal){
-                System.out.println(((Animal)objects[i]).sound());
-            }
-        }
+        System.out.println(intBox.get());
+        System.out.println(strBox.get());
+
+        StringContainer strCon = new StringContainer();
+        strCon.add("Hello from strCon!");
+        System.out.println(strCon.get());
+
+        GenericContainer<Circle> circleContainer = new GenericContainer<>();
+        circleContainer.add(new Circle(5.0));
+        System.out.println(circleContainer.get());
+
+        circleContainer.printTwice(new Rectangle(3,5));
+
+        NumberBox<Integer> box1 = new NumberBox<>();
+        NumberBox<Double> box2 = new NumberBox<>();
+        //NumberBox<String> box3 = new NumberBox<>();
+        // System.out.println("This runs fine");
+        // ArrayList<String> list = new ArrayList<>();
+        // list.add("Hello!");
+        // //list.add(42);
+
+        // String s = (String)list.get(1);
+        // System.out.println(s);
+
+
+        // Object[] objects = {new Tiger(), new Chicken(), new Apple()};
+
+        // for(int i = 0; i < objects.length; i++){
+        //     if(objects[i] instanceof Edible){
+        //         System.out.println(((Edible)objects[i]).howToEat());
+        //     }
+
+        //     if(objects[i] instanceof Animal){
+        //         System.out.println(((Animal)objects[i]).sound());
+        //     }
+        // }
 
         // ArrayList<Number> list = new ArrayList<>();
         // list.add(45);
@@ -725,6 +756,12 @@ public class Main {
             }
         }
         return number;
+    }
+
+    public static <T> void printArray(T[] array){
+        for(T item : array){
+            System.out.println(item);
+        }
     }
 
 
